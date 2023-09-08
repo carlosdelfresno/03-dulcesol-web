@@ -1,0 +1,55 @@
+---
+interface Props {
+  product: Producto
+}
+
+import Caracteristica from '../../components/Caracteristica.astro'
+import data from '../../data/products.json'
+import Layout from '../../layouts/Layout.astro'
+import type { Producto } from '../../types/types'
+
+// const products = data as Producto[];
+
+export const getStaticPaths = () => {
+  return data.map((product) => {
+    return {
+      params: {
+        nombre: product.nombre.replace(' ', '_')
+      },
+      props: { product }
+    }
+  })
+}
+
+const { product } = Astro.props
+---
+
+<Layout title={product.nombre}>
+  <div class='flex flex-row gap-3'>
+    <div class='border-4 border-yellow-300 rounded-lg m-2 w-1/2'>
+      <img
+        src={product.imagen}
+        transition:name=`tr-img-${product.id}`
+        alt={product.nombre}
+      />
+    </div>
+    <div class='m-4 w-1/2'>
+      <div class='flex flex-col gap-4 h-full'>
+        <h1
+          class='text-xl font-bold text-red-900 sm:text-4xl'
+          transition:name=`tr-title-${product.id}`
+        >
+          {product.nombre}
+        </h1>
+        <p class='grow' transition:name=`tr-desc-${product.id}`>
+          {product.descripcion}
+        </p>
+        <div class='end flex flex-row gap-4 justify-around py-5'>
+          <Caracteristica src='/heart.svg' title={product.valorEnergetico} />
+          <Caracteristica src='/box.svg' title={product.unidadesPaquete} />
+          <Caracteristica src='/scale.svg' title={product.pesoPaquete} />
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
