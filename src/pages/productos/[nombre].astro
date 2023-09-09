@@ -25,31 +25,73 @@ const { product } = Astro.props
 ---
 
 <Layout title={product.nombre}>
-  <div class='flex flex-row gap-3'>
-    <div class='border-4 border-yellow-300 rounded-lg m-2 w-1/2'>
-      <img
-        src={product.imagen}
-        transition:name=`tr-img-${product.id}`
-        alt={product.nombre}
-      />
-    </div>
-    <div class='m-4 w-1/2'>
-      <div class='flex flex-col gap-4 h-full'>
-        <h1
-          class='text-xl font-bold text-red-900 sm:text-4xl'
-          transition:name=`tr-title-${product.id}`
-        >
-          {product.nombre}
-        </h1>
-        <p class='grow' transition:name=`tr-desc-${product.id}`>
-          {product.descripcion}
-        </p>
-        <div class='end flex flex-row gap-4 justify-around py-5'>
-          <Caracteristica src='/heart.svg' title={product.valorEnergetico} />
-          <Caracteristica src='/box.svg' title={product.unidadesPaquete} />
-          <Caracteristica src='/scale.svg' title={product.pesoPaquete} />
+  <div class='flex flex-col gap-10'>
+    <div class='flex flex-row gap-3'>
+      <div
+        class='border-4 border-yellow-300 rounded-lg m-2 w-1/2 overflow-hidden'
+      >
+        <img
+          class=''
+          src={product.imagen}
+          transition:name=`tr-img-${product.id}`
+          alt={product.nombre}
+        />
+      </div>
+      <div class='m-4 w-1/2'>
+        <div class='flex flex-col gap-4 h-full align-middle items-stretch'>
+          <h1
+            class='text-xl font-bold text-red-800 sm:text-5xl font-poppins'
+            transition:name=`tr-title-${product.id}`
+          >
+            {product.nombre}
+          </h1>
+          <div class='grow text-xl'>
+            <p class='mt-10' transition:name=`tr-desc-${product.id}`>
+              {product.descripcion}
+            </p>
+          </div>
+          <div class='end flex flex-row gap-4 justify-around py-5'>
+            <Caracteristica src='/heart.svg' title={product.valorEnergetico} />
+            <Caracteristica src='/box.svg' title={product.unidadesPaquete} />
+            <Caracteristica src='/scale.svg' title={product.pesoPaquete} />
+          </div>
         </div>
+      </div>
+    </div>
+    <div class='h-[1px] bg-gray-600 rounded-full'></div>
+    <div class='flex flex-col gap-5'>
+      <h2 class='text-2xl font-bold text-red-800 sm:text-4xl'>Ingredientes</h2>
+      <div class='flex flex-col gap-4'>
+        <p class=''>
+          {product.ingredientes}
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta alias
+          ab, nisi perspiciatis harum eum dolor pariatur labore dolores dolore
+          dolorum tempora consequatur enim veritatis. Earum qui iste molestiae
+          neque.
+        </p>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repudiandae
+          dicta qui earum suscipit fugit magnam velit, pariatur minima
+          consequatur. Eos impedit quidem omnis quaerat quas et cumque libero
+          odit alias.
+        </p>
+        <p>
+          Lorem ipsum dolor sit, amet consectetur adipisicing elit. Soluta, iste
+          accusamus dolores, beatae dignissimos voluptatibus dolore laudantium
+          aliquid quisquam eius tempora voluptate! Totam mollitia dolores
+          voluptate corporis dolore distinctio accusamus?
+        </p>
+        <p>
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ea rem
+          commodi consectetur dolores aspernatur dolorum quo nulla quae mollitia
+          quod vitae dignissimos accusamus id quidem at, aliquam modi libero
+          voluptate.
+        </p>
       </div>
     </div>
   </div>
 </Layout>
+<style>
+</style>

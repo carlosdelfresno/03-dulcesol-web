@@ -8,46 +8,6 @@ const { producto } = Astro.props
 
 console.log()
 ---
-
-<!-- <a href={`/productos/${producto.nombre}`} class="block">
-	<img
-	  alt={producto.nombre}
-	  transition:name={`tr-img-${producto.nombre}`}
-	  src={producto.imagen}
-	  class="h-56 w-full rounded-bl-3xl rounded-tr-3xl object-cover sm:h-64 lg:h-72"
-	/>
-  
-	<div class="mt-4 sm:flex sm:items-center sm:justify-center sm:gap-4">
-	  <strong class="font-medium">{producto.nombre}</strong>
-  
-	  <span class="hidden sm:block sm:h-px sm:w-8 sm:bg-yellow-500"></span>
-  
-	  <p class="mt-0.5 opacity-50 sm:mt-0">Branding / Signage</p>
-	</div>
-  </a> --><!-- <a href={`/productos/${producto.nombre.replace(' ', '_')}`} class="group relative block w-[300px] h-[300px]">
-	<img
-	  alt={producto.nombre}
-	  transition:name=`tr-img-${producto.id}`
-	  transition:animate="fade"
-	  src={producto.imagen}
-	  class="absolute inset-0 h-full w-full object-cover opacity-75 transition-opacity group-hover:opacity-50"
-	/>
-  
-	<div class="relative p-4 sm:p-6 lg:px-2 lg:py-4">
-  
-	  <p class="text-xl font-bold text-gray-400 sm:text-2xl" transition:name=`tr-title-${producto.id}`>{producto.nombre}</p>
-  
-	  <div class="mt-16 sm:mt-24 lg:mt-32">
-		<div
-		  class="translate-y-8 transform opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100"
-		>
-		  <p class="text-sm text-white">
-			{producto.descripcionCorta}
-		  </p>
-		</div>
-	  </div>
-	</div>
-  </a> -->
 <a
   href={`/productos/${producto.nombre.replace(' ', '_')}`}
   class='border-2 p-2 rounded-md border-red-100 h-[400px] flex flex-col gap-2'
@@ -58,12 +18,12 @@ console.log()
       transition:name=`tr-img-${producto.id}`
       transition:animate='fade' 
       src={producto.imagen}
-      class='h-64 w-72 object-cover hover:scale-125 duration-300'
+      class='h-64 w-72 object-cover hover:scale-110 duration-300'
     />
   </div>
 
   <h3
-    class='mt-4 text-lg font-bold text-red-900 sm:text-xl'
+    class='mt-4 text-lg font-bold text-red-800 sm:text-xl'
     transition:name=`tr-title-${producto.id}`
   >
     {producto.nombre}
