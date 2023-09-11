@@ -1,3 +1,61 @@
 ---
-Astro.redirect('/productos')
+import Layout from '../layouts/Layout.astro'
 ---
+
+<Layout title='Versión dulcesol por Carlos del Fresno'>
+  <main
+    class='flex flex-col justify-center text-center py-20 gap-4 mx-auto lg:w-2/3'
+  >
+    <h1 class='text-6xl'>¡Hola! 👋</h1>
+    <h1 class='text-3xl'>
+      Soy <a
+        href='https://carlosdelfresno.netlify.app/'
+        class='text-red-600 font-bold'
+        target='_blank'
+        title='Acceso a mi portfolio'
+      >
+        Carlos del Fresno</a
+      >, ingeniero de software
+    </h1>
+    <div class=''>
+      <img src='/me.jpg' class='rounded-full inline border-red-700 border' />
+    </div>
+    <p>
+      Llevo un tiempo aprendiendo nuevas tecnologías para el desarrollo de
+      aplicaciones web y actualmente estoy profundizando con Astro 3.0 y
+      TailwindCSS.
+    </p>
+    <p class=''>
+      Por ello, he decidido rehacer algunas webs existentes para darles un toque
+      diferente. <span
+        class='font-bold text-red-600 text-xl hover:text-red-400 duration-200'
+      >
+        Esta es una de ellas.</span
+      >
+    </p>
+    <p>
+      ¿Pero por qué? Mi ciudad natal es Gandía, lugar donde está alojada una de
+      las fábricas que tiene la empresa y que, por ello, desde pequeño (y no
+      tanto) ha estado muy presente en mi casa.
+    </p>
+    <p>
+      En este desarrollo, aunque la web no es completa, he querido practicar una
+      nueva característica de algunos navegadores (como Chrome y Edge para PC)
+      en la que se puede apreciar cómo las transiciones entre las distintas
+      páginas es mucho más agradable (desde mi punto de vista).
+    </p>
+    <p class='font-bold'>¿Quieres verla?</p>
+    <div>
+      <a
+        class='inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75'
+        href='/productos'
+      >
+        <span
+          class='block rounded-full bg-white px-8 py-3 text-sm font-medium hover:bg-transparent'
+        >
+          Acceder
+        </span>
+      </a>
+    </div>
+  </main>
+</Layout>
