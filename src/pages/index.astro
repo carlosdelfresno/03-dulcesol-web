@@ -2,6 +2,14 @@
 import Layout from '../layouts/Layout.astro'
 ---
 
+<!-- <script>
+  const oculto = document.querySelector('.oculto')
+  setTimeout(() => {
+    oculto?.classList.remove('oculto')
+    oculto?.classList.add('duration-200', 'visible')
+
+  }, 1000)
+</script> -->
 <Layout title='Versión dulcesol por Carlos del Fresno'>
   <main
     class='flex flex-col justify-center text-center py-20 gap-4 mx-auto lg:w-2/3'
@@ -18,14 +26,14 @@ import Layout from '../layouts/Layout.astro'
       >, ingeniero de software
     </h1>
     <div class=''>
-      <img src='/me.jpg' class='rounded-full inline border-red-700 border' />
+      <img src='me.jpg' class='rounded-full inline border-red-700 border w-[200px]' />
     </div>
-    <p>
+    <p class='p-1'>
       Llevo un tiempo aprendiendo nuevas tecnologías para el desarrollo de
       aplicaciones web y actualmente estoy profundizando con Astro 3.0 y
       TailwindCSS.
     </p>
-    <p class=''>
+    <p class='p-2'>
       Por ello, he decidido rehacer algunas webs existentes para darles un toque
       diferente. <span
         class='font-bold text-red-600 text-xl hover:text-red-400 duration-200'
@@ -33,18 +41,18 @@ import Layout from '../layouts/Layout.astro'
         Esta es una de ellas.</span
       >
     </p>
-    <p>
-      ¿Pero por qué? Mi ciudad natal es Gandía, lugar donde está alojada una de
+    <p class='p-3'>
+      <span class="font-semibold">¿Pero por qué?</span> Mi ciudad natal es Gandía, lugar donde está alojada una de
       las fábricas que tiene la empresa y que, por ello, desde pequeño (y no
       tanto) ha estado muy presente en mi casa.
     </p>
-    <p>
+    <p class='p-4'>
       En este desarrollo, aunque la web no es completa, he querido practicar una
       nueva característica de algunos navegadores (como Chrome y Edge para PC)
       en la que se puede apreciar cómo las transiciones entre las distintas
       páginas es mucho más agradable (desde mi punto de vista).
     </p>
-    <p class='font-bold'>¿Quieres verla?</p>
+    <p class='font-bold p-5 text-xl'>¿Quieres verla?</p>
     <div>
       <a
         class='inline-block rounded-full bg-gradient-to-r from-pink-500 via-red-500 to-yellow-500 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75'
@@ -59,3 +67,25 @@ import Layout from '../layouts/Layout.astro'
     </div>
   </main>
 </Layout>
+<style>
+  /* @keyframes slideInLeft {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+  .p-1 {
+    animation-duration: 2s;
+    animation-delay: 1s;
+    animation-name: slideInLeft;
+    animation: 1s infinite 5s 1 slideInLeft;
+  }
+  
+  .p-2 {
+    animation-duration: 2s;
+    animation-delay: 3s;
+    animation-name: slideInLeft;
+  } */
+</style>
